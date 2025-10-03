@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Housework Routine</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="apple-touch-icon" href="android-launcher-icon-192-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-launchericon-192-192.png">
+
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="description" content="A simple daily task manager with scheduling.">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="daily-routine-header">Daily Housework Routine</h1>
+
+        <div class="current-info">
+            <h2 id="dateDisplay" class="date-display"></h2>
+            <h2 id="timeDisplay" class="time-display"></h2>
+        </div>
+        
+        <div class="input-group">
+            <input type="text" id="taskinput" placeholder="Enter your task..." aria-label="Enter your new task">
+
+            <select id="periodSelect" aria-label="Select time period for the task">
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select>
+            
+            <input type="time" id="timeInput" value="08:00" aria-label="Set specific time for the task">
+
+            <button id="addTaskBtn" class="add-btn">Add</button>
+        </div>
+        
+        <div class="task-section">
+            
+            <div class="morning-list">
+                <h3>
+                    <span class="icon">🌅</span> Morning
+                </h3>
+                <ul id="morningList">
+                </ul>
+            </div>
+
+            <div class="afternoon-list">
+                <h3>
+                    <span class="icon">☀</span> Afternoon
+                </h3>
+                <ul id="afternoonList">
+                </ul>
+            </div>
+
+            <div class="evening-list">
+                <h3>
+                    <span class="icon">🌙</span> Evening
+                </h3>
+                <ul id="eveningList">
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="clear-task-section">
+            <button id="clearCompletedTasks" class="clear-btn">Clear Completed Tasks</button>
+        </div>
+
+    </div>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Service Worker registered', reg))
+                .catch(err => console.log('Service Worker registration failed', err));
+        }
+    </script>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
