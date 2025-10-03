@@ -2,7 +2,7 @@
 
 // Import the function responsible for setting up all interaction logic
 // This function will handle getting the DOM elements and attaching listeners.
-import { setupEventListeners } from './modules/taskManager.js';
+import { setupEventListeners } from './taskManager.js';
 
 // Wait for the entire HTML document to be fully loaded before running any script.
 // This ensures all HTML elements (like buttons and lists) are available.
@@ -20,3 +20,4 @@ if ('serviceWorker' in navigator) {
         .then(reg => console.log('Service Worker registered successfully!', reg))
         .catch(err => console.log('Service Worker registration failed:', err));
 }
+
