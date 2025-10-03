@@ -1,6 +1,6 @@
 // modules/taskManager.js
 
-import { createTaskElement, getTaskList } from './modules/dom.js';
+import { createTaskElement, getTaskList } from './dom.js';
 
 const taskInput = document.getElementById("taskinput");
 const periodSelect = document.getElementById("periodSelect");
@@ -176,4 +176,5 @@ export function setupEventListeners() {
     clearCompletedBtn.addEventListener("click", clearCompletedTasks);
     taskInput.addEventListener("keypress", e => { if(e.key==='Enter'){ e.preventDefault(); addTask(); }});
 }
+
 
